@@ -28,8 +28,11 @@ class Server{
         this.app.use(express.static('public'));
     }
 
+
     routes(){
+        this.app.use('/api/auth',require('../routes/auth'));
         this.app.use('/api/users',require('../routes/user'));
+
     }
 
     start(){
